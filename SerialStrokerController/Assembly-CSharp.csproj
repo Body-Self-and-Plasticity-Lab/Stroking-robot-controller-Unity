@@ -53,8 +53,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Ardity\Scripts\Samples\SampleCustomDelimiter.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Samples\SampleMessageListener.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Samples\SampleTearDown.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Samples\SampleUserPolling_JustRead.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Samples\SampleUserPolling_ReadWrite.cs" />
+     <Compile Include="Assets\Ardity\Scripts\SerialController.cs" />
+     <Compile Include="Assets\Ardity\Scripts\SerialControllerCustomDelimiter.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Threads\AbstractSerialThread.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Threads\SerialThread.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Threads\SerialThreadCustomDelimiter.cs" />
+     <Compile Include="Assets\Ardity\Scripts\Threads\SerialThreadLines.cs" />
      <Compile Include="Assets\Scripts\BrushController.cs" />
      <Compile Include="Assets\Scripts\RobotManager.cs" />
+     <Compile Include="Assets\Scripts\RobotManagerArvity.cs" />
+     <Compile Include="Assets\Scripts\RobotMessengerForTesting.cs" />
      <Compile Include="Assets\Scripts\SerialManager.cs" />
      <None Include="Assets\Objects\paintbrush\archibase.net.txt" />
  <Reference Include="UnityEditor.StandardEvents">

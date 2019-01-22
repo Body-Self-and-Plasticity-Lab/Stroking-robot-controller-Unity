@@ -13,6 +13,7 @@ public class RobotManager : MonoBehaviour {
 	[Range(0,90)]
 	public int angle;
 
+
 	private int storedDistance, storedSpeed, storedAngle;
 	private string error;
 	private bool initialized;
@@ -21,6 +22,7 @@ public class RobotManager : MonoBehaviour {
 		storedDistance = distance;
 		storedSpeed = speed;
 		storedAngle = angle;
+
 	}
 
 	//SEND MOVEMENT SEGMENT SHOULD BE SENT N NUMBER OF TIMES, IN ORDER TO SUM 100 UNITS OF DISTANCE.
@@ -30,9 +32,12 @@ public class RobotManager : MonoBehaviour {
 	void Update(){
 
 
-		if (serialManager.ReadFromPort (5) != null) {
+
+		if (serialManager.ReadFromPort (5) != null){// | serialManager.ReadFromPort (5) != " ") {
 			error = serialManager.ReadFromPort (5);
-			Debug.Log ("The stroker says: " + error);
+
+			if (error != null)
+				Debug.Log ("The stroker says: " + error);
 		}
 
 		if (error == "ACK")
@@ -44,12 +49,14 @@ public class RobotManager : MonoBehaviour {
 
 		if (Input.GetKeyDown ("c")) 	ClearNumberSegment ();
 
+		if (Input.GetKeyDown ("r")) 	ReadSegment ();
 
+		if (Input.GetKeyDown ("t"))		ReadDuration();
 	}
 
 	public void SendMovementSegment(int distance, int speed, int angle){
 
-		string message = ("SET,L" + distance.ToString("000") + ",MS" + speed.ToString("00") + ",SV" + angle.ToString("00")); //("00") sets the number of digits to 2
+		string message = ("SET,L" + distance.ToString("000") + ",MS" + speed.ToString("00") + ",SV" + angle.ToString("00") + ",R" + speed.ToString("00")); //("00") sets the number of digits to 2
 
 		if (distance < 0 || distance > 100)
 			Debug.LogError ("wrong distance value, should be between 0 and 100");
@@ -69,4 +76,14 @@ public class RobotManager : MonoBehaviour {
 	public void StartMovement(){
 		serialManager.WriteToPort ("START");
 	}
+
+	public void ReadSegment(){
+		serialManager.WriteToPort ("READ");
+	}
+
+	public void ReadDuration(){
+		serialManager.WriteToPort ("TIME");
+	}
+
+
 }

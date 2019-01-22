@@ -9,7 +9,7 @@ public class SerialManager : MonoBehaviour {
 	[Tooltip("The name of the serial port")]
 	public string portName;//the COM Port
 
-	public int baudRate = 	115200;//Fixed to 115200 for the robot.
+	public int baudRate = 115200;//Fixed to 115200 for the robot.
 	SerialPort serialDevice;
 
 
@@ -17,6 +17,13 @@ public class SerialManager : MonoBehaviour {
 		serialDevice = new SerialPort (portName, baudRate); //initializes a serial port
 		if(serialDevice != null) serialDevice.Close (); //makes sure the device is closed before openning
 		serialDevice.Open (); //opens serial device
+
+
+	//	StartCoroutine (AsynchronousReadFromPort ((string s) => Debug.Log (s), () => Debug.LogError ("Error!"), 10000f));
+	}
+
+	void Update(){
+		
 	}
 
 	public void WriteToPort(string message){
@@ -40,6 +47,40 @@ public class SerialManager : MonoBehaviour {
 			return null;
 		}
 	}
+		
+
+	public IEnumerator AsynchronousReadFromPort(Action<string> callback, Action fail = null, float timeout = float.PositiveInfinity) {
+		DateTime initialTime = DateTime.Now;
+		DateTime nowTime;
+		TimeSpan diff = default(TimeSpan);
+
+		string dataString = null;
+
+		do {
+			try {
+				dataString = serialDevice.ReadLine();
+			}
+			catch (TimeoutException) {
+				dataString = null;
+			}
+
+			if (dataString != null)
+			{
+				callback(dataString);
+				yield break; // Terminates the Coroutine
+			} else
+				yield return null; // Wait for next frame
+
+			nowTime = DateTime.Now;
+			diff = nowTime - initialTime;
+
+		} while (diff.Milliseconds < timeout);
+
+		if (fail != null)
+			fail();
+		yield return null;
+	}
+
 
 
 	void OnDisable() {
