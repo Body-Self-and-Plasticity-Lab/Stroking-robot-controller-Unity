@@ -68,7 +68,9 @@
      <Compile Include="Assets\Scripts\RobotManager.cs" />
      <Compile Include="Assets\Scripts\RobotManagerArvity.cs" />
      <Compile Include="Assets\Scripts\RobotMessengerForTesting.cs" />
+     <Compile Include="Assets\Scripts\RobotVRIntegrator.cs" />
      <Compile Include="Assets\Scripts\SerialManager.cs" />
+     <Compile Include="Assets\Scripts\WaitForFixedTime.cs" />
      <None Include="Assets\Objects\paintbrush\archibase.net.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/Marte/Documents/GitHub/Stroking-robot-controller-Unity/SerialStrokerController/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
