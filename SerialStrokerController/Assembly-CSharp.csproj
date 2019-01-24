@@ -65,6 +65,7 @@
      <Compile Include="Assets\Ardity\Scripts\Threads\SerialThreadCustomDelimiter.cs" />
      <Compile Include="Assets\Ardity\Scripts\Threads\SerialThreadLines.cs" />
      <Compile Include="Assets\Scripts\BrushController.cs" />
+     <Compile Include="Assets\Scripts\MovementSeries.cs" />
      <Compile Include="Assets\Scripts\RobotManager.cs" />
      <Compile Include="Assets\Scripts\RobotManagerArvity.cs" />
      <Compile Include="Assets\Scripts\RobotMessengerForTesting.cs" />
