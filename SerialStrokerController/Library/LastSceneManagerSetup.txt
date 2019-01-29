@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MovementSeries.unity
+- path: Assets/StrokingRobot/Scenes/MovementSeries.unity
   isLoaded: 1
   isActive: 1
