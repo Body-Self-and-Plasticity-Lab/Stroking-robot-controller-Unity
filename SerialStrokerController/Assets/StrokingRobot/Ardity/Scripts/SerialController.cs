@@ -25,7 +25,7 @@ using System.Threading;
  */
 public class SerialController : MonoBehaviour
 {
-    [Tooltip("Port name with which the SerialPort object will be created.")]
+	[Tooltip("Port name with which the SerialPort object will be created. Use the format \\\\.\\COM11 for ports > 9")]
     public string portName = "COM3";
 
     [Tooltip("Baud rate that the serial device is using to transmit data.")]

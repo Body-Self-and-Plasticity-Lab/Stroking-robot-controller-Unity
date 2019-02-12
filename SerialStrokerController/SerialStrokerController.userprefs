@@ -1,12 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MovementSeries.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\StrokingRobot\Ardity\Scripts\SerialController.cs">
     <Files>
-      <File FileName="Assets\Scripts\BrushController.cs" Line="42" Column="2" />
-      <File FileName="Assets\Scripts\RobotManagerArvity.cs" Line="70" Column="4" />
-      <File FileName="Assets\Scripts\RobotVRIntegrator.cs" Line="24" Column="4" />
-      <File FileName="Assets\Scripts\WaitForFixedTime.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MovementSeries.cs" Line="30" Column="5" />
+      <File FileName="Assets\StrokingRobot\Ardity\Scripts\SerialController.cs" Line="31" Column="77" />
+      <File FileName="Assets\StrokingRobot\Ardity\Scripts\Threads\SerialThreadLines.cs" Line="2" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

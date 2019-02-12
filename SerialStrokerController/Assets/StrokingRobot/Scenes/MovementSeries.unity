@@ -650,6 +650,11 @@ Prefab:
       propertyPath: speedPerStep.Array.data[1]
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114696618326464426, guid: 2fbd624b46a8afd4fab3946118f00e85,
+        type: 2}
+      propertyPath: portName
+      value: \\.\COM11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fbd624b46a8afd4fab3946118f00e85, type: 2}
   m_IsPrefabAsset: 0
